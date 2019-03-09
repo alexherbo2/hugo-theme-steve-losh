@@ -1,0 +1,12 @@
+<script>
+  DOMContentLoaded = (event) => {
+    const tableOfContents = document.querySelector('#TableOfContents')
+    if (tableOfContents) {
+      const node = document.querySelector('#table-of-contents')
+      node.replaceWith(tableOfContents)
+    }
+  }
+  document.addEventListener('DOMContentLoaded', DOMContentLoaded)
+</script>
+
+<div id="table-of-contents"></div>

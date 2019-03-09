@@ -1,0 +1,27 @@
+<head>
+  <meta charset="utf-8">
+  <!-- Title and description -->
+  <title>{{ .Title }} – {{ .Site.Title }}</title>
+  {{ with .Description }}
+    <meta name="description" content="{{ . }}">
+  {{ end }}
+  <!-- Favorite icon -->
+  {{ with .Site.Params.Icon }}
+    <link href="{{ . | relURL }}" rel="icon">
+  {{ end }}
+  <!-- CSS -->
+  {{ range (union (slice "css/main.css") .Site.Params.CSS) }}
+    <link href="{{ . | relURL }}" rel="stylesheet">
+  {{ end }}
+  <!-- JavaScript -->
+  {{ range (union (slice "js/main.js") .Site.Params.JS) }}
+    <script src="{{ . | relURL }}"></script>
+  {{ end }}
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script>
+  <!-- Moment -->
+  <script src="https://momentjs.com/downloads/moment.js"></script>
+  <!-- Highlight -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/github.min.css" rel="stylesheet">
+</head>

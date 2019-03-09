@@ -1,0 +1,35 @@
+{{ define "main" }}
+  {{ $Date := .Date.Format .Site.Params.dateForm }}
+  {{ $Lastmod := .Lastmod.Format .Site.Params.dateForm }}
+  <div id="heading">
+    <div class="wrap">
+      <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+      <ul class="icons">
+        {{ if .Draft }}
+          <li>
+            <span class="important" title="Draft"><i class="fas fa-flask"></i></span>
+          </li>
+        {{ end }}
+        {{ with .Site.Params.Pages.Raw }}
+          <li>
+            <a title="Raw" href="{{ printf . $.File.Path }}"><i class="far fa-file"></i></a>
+          </li>
+        {{ end }}
+        {{ with .Site.Params.Pages.History }}
+          <li>
+            <a title="{{ $Lastmod }}" href="{{ printf . $.File.Path }}"><i class="fab fa-git-square"></i></a>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ if not .Date.IsZero }}
+      <div class="date">
+        <p>Posted on <time>{{ $Date }}</time> (<time class="relative">{{ .Date }}</time>).</p>
+      </div>
+    {{ end }}
+  </div>
+  <div class="invisible">
+    {{ .TableOfContents }}
+  </div>
+  {{ .Content }}
+{{ end }}

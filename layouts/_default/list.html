@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <ol class="section-listing">
+    {{ range .Pages }}
+      <li>
+        <div class="title">
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </div>
+        {{ with .Description }}
+          <div class="description">
+            <span>{{ . }}</span>
+          </div>
+        {{ end }}
+      </li>
+    {{ end }}
+  </ol>
+{{ end }}

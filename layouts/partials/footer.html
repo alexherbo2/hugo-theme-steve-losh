@@ -1,0 +1,22 @@
+<footer>
+  <ul class="social">
+    {{ range .Site.Menus.social }}
+      <li>
+        <a href="{{ .URL }}">{{ .Name }}</a>
+      </li>
+    {{ end }}
+  </ul>
+  <ul class="credits">
+    {{ with .Site.Params.Host }}
+      <li>
+        Hosted on <a href="{{ .repository }}">{{ .name }}</a>
+      </li>
+    {{ end }}
+    <li>
+      Powered by <a href="https://gohugo.io">Hugo</a>
+    </li>
+    <li>
+      Theme from <a href="http://stevelosh.com">Steve Losh</a>
+    </li>
+  </ul>
+</footer>

@@ -1,0 +1,17 @@
+name = "Steve Losh"
+license = "Unlicense"
+licenselink = "https://github.com/alexherbo2/hugo-theme-steve-losh/blob/master/UNLICENSE"
+description = "Steve Losh’s theme for Hugo"
+homepage = "https://github.com/alexherbo2/hugo-theme-steve-losh"
+tags = []
+features = []
+min_version = "0.41"
+
+[author]
+  name = "Alex Leferry 2>"
+  homepage = "https://github.com/alexherbo2"
+
+[original]
+  name = "Steve Losh"
+  homepage = "http://stevelosh.com"
+  repo = "https://bitbucket.org/sjl/stevelosh"
