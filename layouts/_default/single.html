@@ -20,6 +20,11 @@
             <a title="{{ $Lastmod }}" href="{{ printf . $.File.Path }}"><i class="fab fa-git-square"></i></a>
           </li>
         {{ end }}
+        {{ with .Site.Params.Pages.Edit }}
+          <li>
+            <a title="Suggest an edit" href="{{ printf . $.File.Path }}"><i class="fas fa-pen-square"></i></a>
+          </li>
+        {{ end }}
       </ul>
     </div>
     {{ if not .Date.IsZero }}

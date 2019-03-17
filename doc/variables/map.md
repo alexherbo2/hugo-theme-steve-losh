@@ -17,6 +17,7 @@
 - [.Site.Params.Host.Repository](https://github.com/alexherbo2/hugo-theme-steve-losh/search?q=.Site.Params.Host.Repository+path:layouts)
 - [.Site.Params.Icon](https://github.com/alexherbo2/hugo-theme-steve-losh/search?q=.Site.Params.Icon+path:layouts)
 - [.Site.Params.JS](https://github.com/alexherbo2/hugo-theme-steve-losh/search?q=.Site.Params.JS+path:layouts)
+- [.Site.Params.Pages.Edit](https://github.com/alexherbo2/hugo-theme-steve-losh/search?q=.Site.Params.Pages.Edit+path:layouts)
 - [.Site.Params.Pages.History](https://github.com/alexherbo2/hugo-theme-steve-losh/search?q=.Site.Params.Pages.History+path:layouts)
 - [.Site.Params.Pages.Raw](https://github.com/alexherbo2/hugo-theme-steve-losh/search?q=.Site.Params.Pages.Raw+path:layouts)
 - [.Site.Title](https://github.com/alexherbo2/hugo-theme-steve-losh/search?q=.Site.Title+path:layouts)

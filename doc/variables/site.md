@@ -117,6 +117,19 @@ Custom JavaScript files.
   js = ["js/custom.js"]
 ```
 
+## .Site.Params.Pages.Edit
+
+Link to page edit.
+
+**Example**
+
+`config.toml`
+
+``` toml
+[params.pages]
+  edit = "https://github.com/alexherbo2/site/blob/master/content/%s"
+```
+
 ## .Site.Params.Pages.History
 
 Link to page history.
