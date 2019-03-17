@@ -472,3 +472,7 @@ kbd {
   padding: 1px;
   background-color: var(--color-black);
 }
+
+#content hr {
+  display: none;
+}
