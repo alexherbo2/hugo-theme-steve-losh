@@ -111,6 +111,23 @@ DOMContentLoaded = (event) => {
     link.replaceWith(figure)
   }
 
+  // Convert isolated Dailymotion video links to embedded videos
+  for (const link of links) {
+    if (false === (/dai.ly/.test(link.href) && link.parentElement.childNodes.length === 1))
+      continue
+    const figure = document.createElement('figure')
+    figure.classList.add('elastic')
+    const frame = document.createElement('iframe')
+    frame.width = 560
+    frame.height = 315
+    frame.setAttribute('frameborder', 0)
+    frame.setAttribute('allowfullscreen', '')
+    const identifier = link.href.match(/dai.ly.(.+)/)[1]
+    frame.src = `https://dailymotion.com/embed/video/${identifier}`
+    figure.append(frame)
+    link.replaceWith(figure)
+  }
+
 }
 
 document.addEventListener('DOMContentLoaded', DOMContentLoaded)

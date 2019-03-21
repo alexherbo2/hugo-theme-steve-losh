@@ -19,3 +19,13 @@ Convert YouTube video links to embedded videos.
 ``` markdown
 <https://youtu.be/qtIqKaDlqXo>
 ```
+
+## Dailymotion
+
+Convert Dailymotion video links to embedded videos.
+
+**Example**
+
+``` markdown
+<https://dai.ly/x8nax4>
+```
