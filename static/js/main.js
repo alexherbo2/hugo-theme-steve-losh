@@ -4,6 +4,7 @@ DOMContentLoaded = (event) => {
 
   const headings = content.querySelectorAll('h1[id], h2[id], h3[id], h4[id]')
   const links = content.querySelectorAll('a')
+  const imageLinks = content.querySelectorAll('a img')
   const codes = content.querySelectorAll('code')
   const codeBlocks = content.querySelectorAll('pre code')
 
@@ -114,6 +115,21 @@ DOMContentLoaded = (event) => {
     source.src = link.href
     video.append(source)
     link.replaceWith(video)
+  }
+
+  // Convert asciicast image links to embedded players
+  // Markdown: [![asciicast](https://asciinema.org/a/ID.svg)](https://asciinema.org/a/ID)
+  // HTML: <script id="asciicast-ID" src="https://asciinema.org/a/ID.js" async></script>
+  for (const imageLink of imageLinks) {
+    const link = imageLink.parentElement
+    if (false === /asciinema.org/.test(link.href))
+      continue
+    const script = document.createElement('script')
+    const identifier = link.href.match(/asciinema.org.a.(.+)/)[1]
+    script.id = `asciicast-${identifier}`
+    script.src = `https://asciinema.org/a/${identifier}.js`
+    script.setAttribute('async', '')
+    link.replaceWith(script)
   }
 
   // Convert isolated YouTube video links to embedded videos
