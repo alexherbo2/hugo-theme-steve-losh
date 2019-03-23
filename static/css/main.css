@@ -290,6 +290,39 @@ body > hr.bottom {
   padding-left: 0;
 }
 
+/* Context Navigation
+╭──────────────╮
+│           [^]│
+│   ~~~~~~~~   │
+│   ~~~~~~~~   │
+│   ~~~~~~~~   │
+│              │
+│   [Title]    │
+│   ~~~~~~~~   │
+│   ~~~~~~~~   │
+│   ~~~~~~~~   │
+│   ~~~~~~~~   │
+╰──────────────╯ */
+#context-navigation {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 5px;
+  font-size: var(--font-size-tiny);
+}
+
+/* Context navigation links are gray with no decoration
+   and pink while hovering. */
+#context-navigation a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+#context-navigation a:hover {
+  color: var(--color-pink);
+  text-decoration: none;
+}
+
 /* Headings */
 
 h1 {

@@ -24,6 +24,28 @@ DOMContentLoaded = (event) => {
     hljs.highlightBlock(codeBlock)
   }
 
+  // Context Navigation
+  const contextNavigation = (event) => {
+    const container = document.querySelector('#context-navigation')
+    if (container === null) {
+      return
+    }
+    container.style.visibility = 'hidden'
+    const anchor = container.querySelector('a')
+    for (let index = headings.length - 1; index >= 0; index--) {
+      const heading = headings[index]
+      if (heading.offsetTop < window.scrollY) {
+        container.style.visibility = 'visible'
+        anchor.title = heading.textContent
+        anchor.href = `#${heading.id}`
+        break
+      }
+    }
+  }
+
+  window.addEventListener('scroll', contextNavigation)
+  window.addEventListener('resize', contextNavigation)
+
   // Flavored Markdown ─────────────────────────────────────────────────────────
 
   // Cool Code Blocks
