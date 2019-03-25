@@ -1,5 +1,7 @@
 DOMContentLoaded = (event) => {
 
+  const now = new Date
+
   const content = document.querySelector('#content')
 
   const headings = content.querySelectorAll('h1[id], h2[id], h3[id], h4[id]')
@@ -7,6 +9,18 @@ DOMContentLoaded = (event) => {
   const imageLinks = content.querySelectorAll('a img')
   const codes = content.querySelectorAll('code')
   const codeBlocks = content.querySelectorAll('pre code')
+
+  // CSS Naked Day
+  if (now.getMonth() === 3 && now.getDate() === 9) {
+    const styles = document.querySelectorAll('link[rel="stylesheet"]')
+    for (const style of styles) {
+      style.remove()
+    }
+    const header = document.querySelector('header')
+    header.innerHTML = `<a href="/">${document.title}</a> with <a href="https://css-naked-day.github.io">no CSS</a>`
+    // Do not load the rest of the script
+    return
+  }
 
   // Linkify headings
   for (const heading of headings) {
