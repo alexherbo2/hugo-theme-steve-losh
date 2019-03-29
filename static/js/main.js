@@ -24,7 +24,7 @@ DOMContentLoaded = (event) => {
 
   // Linkify headings
   for (const heading of headings) {
-    heading.innerHTML = `<a href="#${heading.id}">${heading.textContent}</a>`
+    heading.innerHTML = `<a href="#${heading.id}">${heading.innerHTML}</a>`
   }
 
   // Time – Relative
