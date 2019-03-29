@@ -29,7 +29,11 @@
     </div>
     {{ if not .Date.IsZero }}
       <div class="date">
-        <p>Posted on <time class="relative" datetime="{{ .Date }}">{{ $Date }}</time>.</p>
+        {{ if eq $Date $Lastmod }}
+          <p>Posted on <time class="relative" datetime="{{ .Date }}">{{ $Date }}</time>.</p>
+        {{ else }}
+          <p>Posted on <time class="relative" datetime="{{ .Date }}">{{ $Date }}</time> (↻ <time class="relative" datetime="{{ $Lastmod }}">{{ $Lastmod }}</time>).</p>
+        {{ end }}
       </div>
     {{ end }}
   </div>
