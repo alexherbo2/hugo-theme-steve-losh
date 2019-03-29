@@ -29,7 +29,7 @@
     </div>
     {{ if not .Date.IsZero }}
       <div class="date">
-        <p>Posted on <time>{{ $Date }}</time> (<time class="relative">{{ .Date }}</time>).</p>
+        <p>Posted on <time class="relative" datetime="{{ .Date }}">{{ $Date }}</time>.</p>
       </div>
     {{ end }}
   </div>

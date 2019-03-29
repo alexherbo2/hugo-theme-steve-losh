@@ -30,8 +30,7 @@ DOMContentLoaded = (event) => {
   // Time – Relative
   const times = content.querySelectorAll('time.relative')
   for (const time of times) {
-    time.title = time.textContent
-    time.textContent = moment(time.textContent).fromNow()
+    time.title = moment(time.dateTime).fromNow()
   }
 
   // Syntax highlighting
