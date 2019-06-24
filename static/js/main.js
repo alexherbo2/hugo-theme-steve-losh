@@ -2,7 +2,7 @@ DOMContentLoaded = (event) => {
 
   const now = new Date
 
-  const content = document.querySelector('#content')
+  const content = document.querySelector('main')
 
   const headings = content.querySelectorAll('h1[id], h2[id], h3[id], h4[id]')
   const links = content.querySelectorAll('a')

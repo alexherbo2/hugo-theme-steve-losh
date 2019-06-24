@@ -444,61 +444,61 @@ kbd {
   vertical-align: middle;
 }
 
-/* Content */
+/* Main */
 
-#content #heading {
+main #heading {
   margin-bottom: 22px;
 }
 
-#content #heading .wrap * {
+main #heading .wrap * {
   display: inline;
 }
 
-#content #heading .icons {
+main #heading .icons {
   padding: 0;
 }
 
-#content #heading .icons li {
+main #heading .icons li {
   display: inline;
 }
 
 /* Links are black with no decoration
    and pink while hovering */
-#content #heading .icons a {
+main #heading .icons a {
   color: var(--color-black);
   text-decoration: none;
 }
 
-#content #heading .icons a:hover {
+main #heading .icons a:hover {
   color: var(--color-pink);
   text-decoration: none;
 }
 
-#content #heading .icons .important {
+main #heading .icons .important {
   display: inline-block;
   border-bottom: 2px solid var(--color-pink);
 }
 
-#content #heading .date {
+main #heading .date {
   margin-top: 5px;
   color: #666;
 }
 
-#content #heading .date * {
+main #heading .date * {
   margin: 0;
 }
 
-#content .splash {
+main .splash {
   font-size: var(--font-size-perfect-fifth);
   line-height: 32px;
   text-align: center;
 }
 
-#content .splash em {
+main .splash em {
   color: var(--color-pink);
 }
 
-#content img {
+main img {
   display: block;
   margin: 25px auto 26px;
   border: 11px solid #e5e5e5;
@@ -506,6 +506,6 @@ kbd {
   background-color: var(--color-black);
 }
 
-#content hr {
+main hr {
   display: none;
 }

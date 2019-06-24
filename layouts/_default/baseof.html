@@ -7,10 +7,10 @@
       {{ partial "navigation.html" . }}
     </div>
     <hr class="top">
-    <div id="content">
+    <main>
       {{ block "main" . }}
       {{ end }}
-    </div>
+    </main>
     <hr class="bottom">
     {{ partial "footer.html" . }}
   </body>

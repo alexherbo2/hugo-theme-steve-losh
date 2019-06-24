@@ -5,7 +5,7 @@
       const node = document.querySelector('#table-of-contents')
       node.replaceWith(tableOfContents)
     }
-    const content = document.querySelector('#content')
+    const content = document.querySelector('main')
     const headings = content.querySelectorAll('h1[id], h2[id], h3[id], h4[id]')
     for (const heading of headings) {
       if (tableOfContents.compareDocumentPosition(heading) === Node.DOCUMENT_POSITION_PRECEDING) {
