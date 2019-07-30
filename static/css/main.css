@@ -406,28 +406,6 @@ pre[data-filename]:hover::after {
   top: 0;
 }
 
-/* Scrollbar */
-
-pre code::-webkit-scrollbar {
-  height: 25px;
-}
-
-pre code::-webkit-scrollbar-button:start,
-pre code::-webkit-scrollbar-button:end {
-  display: none;
-}
-
-pre code::-webkit-scrollbar-track-piece {
-  background-color: #eee;
-}
-
-pre code::-webkit-scrollbar-thumb {
-  background-color: #bbb;
-  border: 7px solid #eee;
-  -webkit-background-clip: padding-box;
-  -webkit-border-radius: 12px;
-}
-
 /* Style from GitHub */
 kbd {
   background-color: #fafbfc;
@@ -508,4 +486,26 @@ main img {
 
 main hr {
   display: none;
+}
+
+/* Scrollbar */
+
+main ::-webkit-scrollbar {
+  height: 25px;
+}
+
+main ::-webkit-scrollbar-button:start,
+main ::-webkit-scrollbar-button:end {
+  display: none;
+}
+
+main ::-webkit-scrollbar-track-piece {
+  background-color: #eee;
+}
+
+main ::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border: 7px solid #eee;
+  -webkit-background-clip: padding-box;
+  -webkit-border-radius: 12px;
 }
