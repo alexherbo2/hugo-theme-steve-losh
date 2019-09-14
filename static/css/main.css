@@ -65,6 +65,8 @@ body {
   font-size: var(--font-size-root);
   line-height: 25px;
   color: var(--color-black);
+  /* Enable ligatures */
+  text-rendering: optimizeLegibility;
 }
 
 /* Fluid layout */
