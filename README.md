@@ -1,6 +1,6 @@
 # Hugo Theme – Steve Losh
 
-###### [Demo] | [Documentation](doc) | [Contributing](CONTRIBUTING)
+###### [Demo] | [Documentation](docs) | [Contributing](CONTRIBUTING)
 
 > [Steve Losh]’s theme for [Hugo].
 
