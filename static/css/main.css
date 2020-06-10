@@ -57,7 +57,8 @@
 │   │Footer│   │
 ╰───┴──────┴───╯ */
 body {
-  position: relative;
+  display: flex;
+  flex-direction: column;
   max-width: 615px;
   margin: 0 auto;
   margin-bottom: 5em;
@@ -134,19 +135,11 @@ Links are pink and underlined while hovering.
 ╰──────────────────────────────────────────────────────────────────────────────╯ */
 
 #header {
+  display: flex;
+  justify-content: space-between;
   font-family: var(--font-serif);
   line-height: 50px;
   text-transform: lowercase;
-  display: table;
-  width: 100%;
-}
-
-#header > * {
-  display: table-cell;
-}
-
-header {
-  text-align: left;
 }
 
 header {
