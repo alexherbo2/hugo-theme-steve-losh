@@ -81,7 +81,7 @@ DOMContentLoaded = (event) => {
   // │                              │
   // ╰──────────────────────────────╯
   for (const codeBlock of codeBlocks) {
-    const paragraph = codeBlock.parentElement.previousElementSibling
+    const paragraph = codeBlock.parentElement.parentElement.previousElementSibling
     if (paragraph.nodeName !== 'P') {
       continue
     }
