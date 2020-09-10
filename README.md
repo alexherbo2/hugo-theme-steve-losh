@@ -23,6 +23,6 @@ theme = "steve-losh"
 For more information, read the official [Quick Start – Add a Theme] of Hugo.
 
 [Hugo]: https://gohugo.io
-[Steve Losh]: http://stevelosh.com
+[Steve Losh]: https://stevelosh.com
 [Demo]: https://alexherbo2.github.io
 [Quick Start – Add a Theme]: https://gohugo.io/getting-started/quick-start#step-3-add-a-theme
