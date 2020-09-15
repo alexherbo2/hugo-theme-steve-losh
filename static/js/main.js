@@ -148,27 +148,43 @@ DOMContentLoaded = (event) => {
     link.replaceWith(script)
   }
 
-  // Convert isolated YouTube video links to embedded videos
-  for (const link of links) {
-    if (false === (/youtu.be/.test(link.href) && link.parentElement.childNodes.length === 1))
-      continue
-    const figure = document.createElement('figure')
-    figure.classList.add('elastic')
-    const frame = document.createElement('iframe')
-    frame.width = 560
-    frame.height = 315
-    frame.setAttribute('frameborder', 0)
-    frame.setAttribute('allowfullscreen', '')
-    const identifier = link.href.match(/youtu.be.(.+)/)[1]
-    frame.src = `https://youtube.com/embed/${identifier}`
-    figure.append(frame)
-    link.replaceWith(figure)
+  // Returns the embedded video link for YouTube, Dailymotion, etc.
+  const getEmbedVideoLink = (url) => {
+    // YouTube – https://youtube.com
+    if (/youtu.be/.test(url)) {
+      const identifier = url.match(/youtu.be.(.+)/)[1]
+      return `https://youtube.com/embed/${identifier}`
+    }
+
+    // YouTube – Playlists
+    if (/youtube.com.playlist.list/.test(url)) {
+      const identifier = url.match(/youtube.com.playlist.list.(.+)/)[1]
+      return `https://youtube.com/embed/videoseries?list=${identifier}`
+    }
+
+    // Dailymotion – https://dailymotion.com
+    if (/dai.ly/.test(url)) {
+      const identifier = url.match(/dai.ly.(.+)/)[1]
+      return `https://dailymotion.com/embed/video/${identifier}`
+    }
+
+    // Not found
+    return null
   }
 
-  // Convert isolated Dailymotion video links to embedded videos
+  // Convert isolated video links to embedded videos
   for (const link of links) {
-    if (false === (/dai.ly/.test(link.href) && link.parentElement.childNodes.length === 1))
+    // Next unless an isolated video link
+    if (link.parentElement.childNodes.length != 1)
       continue
+
+    // Get the embedded video link
+    const embedVideoLink = getEmbedVideoLink(link.href)
+
+    // Next unless we got the video link
+    if (!embedVideoLink)
+      continue
+
     const figure = document.createElement('figure')
     figure.classList.add('elastic')
     const frame = document.createElement('iframe')
@@ -176,8 +192,7 @@ DOMContentLoaded = (event) => {
     frame.height = 315
     frame.setAttribute('frameborder', 0)
     frame.setAttribute('allowfullscreen', '')
-    const identifier = link.href.match(/dai.ly.(.+)/)[1]
-    frame.src = `https://dailymotion.com/embed/video/${identifier}`
+    frame.src = embedVideoLink
     figure.append(frame)
     link.replaceWith(figure)
   }
